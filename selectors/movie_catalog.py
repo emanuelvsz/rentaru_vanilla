@@ -2,28 +2,22 @@ import time
 import csv
 import os
 
-from helpers import input_ready
+from helpers import input_ready, print_blinking_rainbow_menu
 from queries import get_movies
 
-def print_colorful_line(line, color):
-    return "\033[{}m{}\033[0m".format(color, line)
 
 def movie_catalog():
     os.system('clear')
-    cores = ["91", "92", "94", "95", "96", "97"]
-
     while not input_ready():
-        for cor in cores:
-            os.system('clear')
-            print("\033[{}m--------------------------- Catálogo de Filmes ---------------------------\033[0m".format(cor))
-            get_movies()
-            print(print_colorful_line("--------------", cor), " Pressione 'a' para adicionar um filme, ou qualquer outra tecla para continuar... ", print_colorful_line("--------------", cor))
-            time.sleep(0.3)
-
-        escolha = input("Escolha uma opção: ")
-        if escolha.lower() == 'a':
-            adicionar_filme()
-
+        os.system('clear')
+        print("---------------- Catálogo ----------------\n")
+        print("             ID  NOME  PREÇO              \n")
+        data = get_movies()
+        for movie in data:
+            print(movie)
+        print("-------- Pressione qualquer tecla --------")
+        escolha = input()
+        break
     os.system('clear')
 
 def adicionar_filme():

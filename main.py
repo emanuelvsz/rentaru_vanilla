@@ -5,8 +5,8 @@ import time
 
 def main():
     while True:
-        main_menu()
-        escolha = input("Escolha uma opção: ")
+        print_main_menu()
+        escolha = input()
         if escolha == "1":
             login()
         elif escolha == "2":
