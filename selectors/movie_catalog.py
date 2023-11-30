@@ -1,23 +1,22 @@
+import time
 import csv
 import os
-import sys
-import time
 
-from queries.get_all import get_data
+from helpers import input_ready
+from queries import get_movies
 
 def print_colorful_line(line, color):
     return "\033[{}m{}\033[0m".format(color, line)
 
-def catalogo_filmes():
+def movie_catalog():
     os.system('clear')
-    caminho_do_arquivo = 'db/movie.csv'
     cores = ["91", "92", "94", "95", "96", "97"]
 
     while not input_ready():
         for cor in cores:
             os.system('clear')
             print("\033[{}m--------------------------- Catálogo de Filmes ---------------------------\033[0m".format(cor))
-            get_data(caminho_do_arquivo)
+            get_movies()
             print(print_colorful_line("--------------", cor), " Pressione 'a' para adicionar um filme, ou qualquer outra tecla para continuar... ", print_colorful_line("--------------", cor))
             time.sleep(0.3)
 
@@ -44,12 +43,3 @@ def adicionar_filme():
         escritor_csv = csv.writer(arquivo_csv, delimiter=';')
         escritor_csv.writerow([novo_id, titulo, preco])
 
-def input_ready():
-    try:
-        if os.name == 'nt':
-            return
-        else:
-            import select
-            return select.select([sys.stdin], [], [], 0) == ([sys.stdin], [], [])
-    except:
-        return False
