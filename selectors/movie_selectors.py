@@ -6,6 +6,7 @@ import os
 from queries import *
 from helpers import *
 from models import Rent
+from .menu_options import *
 
 
 def listar_filmes():
@@ -110,6 +111,7 @@ def listar_filmes_por_usuario():
     print("-------- Pressione qualquer tecla para voltar --------")
     escolha = input()
     os.system('clear')
+    user_menu()
 
 def adicionar_filme():
     os.system('clear')
