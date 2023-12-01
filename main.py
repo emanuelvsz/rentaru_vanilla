@@ -1,4 +1,4 @@
-from selectors.menu_options import user_menu, admin_menu
+from collectors.menu_options import user_menu, admin_menu
 
 def main():
     while True:

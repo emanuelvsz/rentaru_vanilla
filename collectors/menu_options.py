@@ -1,8 +1,8 @@
 import time
 import os
 
-from selectors.movie_selectors import *
-from selectors.menu_options import *
+from collectors.movie_collectors import *
+from collectors.menu_options import *
 from helpers import *
 
 
