@@ -1,11 +1,13 @@
 id;title;price;avaiable
 1;Bee Movie;10;true
-2;Scott Pilgrim Contra o Mundo;20;true
+2;Scott Pilgrim Contra o Mundo;20;false
 3;The Shawshank Redemption;15;true
 4;Inception;18;true
-5;Pulp Fiction;12;false
+5;Pulp Fiction;12;true
 6;The Dark Knight;25;true
 7;Forrest Gump;14;true
 8;The Matrix;17;
 9;Titanic;16;true
-10;Jurassic Park;20;false
+10;Jurassic Park;20;true
+11;Alice;100000;true
+12;Bee Movie 2;199;True

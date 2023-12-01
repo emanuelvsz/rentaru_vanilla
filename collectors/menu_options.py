@@ -54,6 +54,8 @@ def admin_menu():
         listar_filmes()
     elif escolha == "2":
         adicionar_filme()
+    elif escolha == "3":
+        adicionar_usuario()
     elif escolha == "0":
         sair()
     else:

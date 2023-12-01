@@ -6,7 +6,7 @@ import os
 from queries import *
 from helpers import *
 from models import Rent
-from .menu_options import *
+from collectors.menu_options import *
 
 
 def listar_filmes():
@@ -118,6 +118,7 @@ def adicionar_filme():
     filme_path = 'db/movie.csv'
     titulo = input("Digite o título do filme: ")
     preco = input("Digite o preço do filme: ")
+    avaiable = True
     with open(filme_path, 'r', newline='', encoding='utf-8') as arquivo_csv:
         leitor_csv = csv.reader(arquivo_csv, delimiter=';')
         linhas = list(leitor_csv)
@@ -128,7 +129,27 @@ def adicionar_filme():
         novo_id = 1
     with open(filme_path, 'a', newline='', encoding='utf-8') as arquivo_csv:
         escritor_csv = csv.writer(arquivo_csv, delimiter=';')
-        escritor_csv.writerow([novo_id, titulo, preco])
+        escritor_csv.writerow([novo_id, titulo, preco, avaiable])
+        
+def adicionar_usuario():
+    os.system('clear')
+    filme_path = 'db/user.csv'
+    nome = input("Digite o nome do usuário: ")
+    email = input("Digite o email do usuário: ")
+    senha = input("Digite a senha do usuário: ")
+    
+    avaiable = True
+    with open(filme_path, 'r', newline='', encoding='utf-8') as arquivo_csv:
+        leitor_csv = csv.reader(arquivo_csv, delimiter=';')
+        linhas = list(leitor_csv)
+    if len(linhas) > 0:
+        ultimo_id = int(linhas[-1][0])
+        novo_id = ultimo_id + 1
+    else:
+        novo_id = 1
+    with open(filme_path, 'a', newline='', encoding='utf-8') as arquivo_csv:
+        escritor_csv = csv.writer(arquivo_csv, delimiter=';')
+        escritor_csv.writerow([novo_id, email, nome, senha, "user"])
 
 def display_movie_details(data):
     if len(data) >= 4:
