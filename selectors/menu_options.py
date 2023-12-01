@@ -12,8 +12,11 @@ def sair():
 
 def print_main_menu():
     os.system('clear')
-    print("-------------- Menu principal --------------\n")
-    print("1. Login")
-    print("2. Catálogo de Filmes")
-    print("3. Sair\n")
+    print("-------------- Menu Principal --------------\n")
+    print("1. Catálogo de Filmes")
+    print("2. Dados de um Filme")
+    print("3. Alugar um Filme")
+    print("4. Devolver um Filme")
+    print("5. Meus Filmes")
+    print("0. Sair\n")
     print("-- Selecione alguma opção para prosseguir --")

@@ -1,2 +1,3 @@
 from .movie import *
-from .auth import *
+from .user import *
+from .rent import *

@@ -1,2 +1,2 @@
-from .movie_catalog import *
+from .movie_selectors import *
 from .menu_options import *
